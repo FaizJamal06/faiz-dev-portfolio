@@ -4,13 +4,14 @@ import { useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-
 import { useEffect, useRef, useState } from "react";
 import Overlay from "./Overlay";
 
-const FRAME_COUNT = 24;
+const FRAME_COUNT = 129;
 
 export default function ScrollyCanvas() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [images, setImages] = useState<HTMLImageElement[]>([]);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [loadedCount, setLoadedCount] = useState(0);
+    const isLoaded = loadedCount === FRAME_COUNT;
 
     // 1. Setup Scroll Hooks
     const { scrollYProgress } = useScroll({
@@ -26,34 +27,30 @@ export default function ScrollyCanvas() {
         restDelta: 0.001
     });
 
-    // Map scroll (0 to 1) to frame index (0 to 23)
+    // Map scroll (0 to 1) to frame index (0 to 128)
     const currentIndex = useTransform(smoothProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
     // 2. Preload Images
     useEffect(() => {
-        let loadedCount = 0;
         const loadedImages: HTMLImageElement[] = [];
+        let count = 0;
 
-        for (let i = 1; i <= FRAME_COUNT; i++) {
-            // Filename format: ezgif-frame-001.png to ezgif-frame-024.png
+        for (let i = 0; i < FRAME_COUNT; i++) {
             const img = new Image();
-            const filename = `ezgif-frame-${i.toString().padStart(3, "0")}.png`;
-            img.src = `/sequence/${filename}`;
+            img.src = `/sequence/frame-${i.toString().padStart(3, '0')}.png`;
             img.onload = () => {
-                loadedCount++;
-                if (loadedCount === FRAME_COUNT) {
-                    setImages(loadedImages);
-                    setIsLoaded(true);
-                }
+                count++;
+                setLoadedCount(prev => prev + 1);
             };
             loadedImages.push(img);
         }
+        setImages(loadedImages);
     }, []);
 
     // 3. Render Canvas
     const render = (index: number) => {
         const canvas = canvasRef.current;
-        if (!canvas || !isLoaded || images.length === 0) return;
+        if (!canvas || loadedCount < FRAME_COUNT || images.length === 0) return;
 
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
