@@ -20,8 +20,8 @@ export default function ScrollyCanvas() {
 
     // Add physics smoothing to the scroll progress
     const smoothProgress = useSpring(scrollYProgress, {
-        mass: 0.1,
-        stiffness: 100,
+        mass: 0.5,
+        stiffness: 50,
         damping: 20,
         restDelta: 0.001
     });
