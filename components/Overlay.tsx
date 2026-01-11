@@ -20,6 +20,10 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
     const opacity3 = useTransform(scrollYProgress, [0.55, 0.7, 0.9], [0, 1, 0]);
     const y3 = useTransform(scrollYProgress, [0.55, 0.9], [50, -50]);
 
+    // Section 4: Final Name Reveal
+    const opacity4 = useTransform(scrollYProgress, [0.85, 0.95, 1], [0, 1, 1]);
+    const y4 = useTransform(scrollYProgress, [0.85, 1], [30, 0]);
+
     return (
         <div className="absolute inset-0 pointer-events-none flex flex-col justify-center items-center z-10 w-full h-full">
 
@@ -56,6 +60,16 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                     Scalable Full-Stack <br />
                     <span className="text-cyan-500">Solutions.</span>
                 </h2>
+            </motion.div>
+
+            {/* Section 4: Final Name Reveal */}
+            <motion.div
+                style={{ opacity: opacity4, y: y4 }}
+                className="absolute text-center px-4 w-full"
+            >
+                <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-white mix-blend-difference">
+                    Faiz Jamal.
+                </h1>
             </motion.div>
 
         </div>
