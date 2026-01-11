@@ -6,6 +6,11 @@ export default function Recognition() {
         "SREC Coin Design Challenge (2nd Place)"
     ];
 
+    const certifications = [
+        "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+        "AWS Cloud Practitioner Essentials (Dec 2025)"
+    ];
+
     const roles = [
         "Software Dev Intern @ Benchmarrk",
         "Full Stack Intern @ Nexoris Solutions",
@@ -14,7 +19,7 @@ export default function Recognition() {
 
     return (
         <section className="bg-[#121212] text-white py-24 px-6 md:px-12 border-t border-white/10">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
 
                 <div className="flex-1">
                     <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-12">Recognition</h3>
@@ -22,6 +27,17 @@ export default function Recognition() {
                         {awards.map((a, i) => (
                             <li key={i} className="text-xl md:text-2xl font-light text-gray-300 pb-6 border-b border-white/5 last:border-0">
                                 {a}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="flex-1">
+                    <h3 className="text-sm text-gray-500 uppercase tracking-widest mb-12">Certifications</h3>
+                    <ul className="space-y-6">
+                        {certifications.map((c, i) => (
+                            <li key={i} className="text-xl md:text-2xl font-light text-gray-300 pb-6 border-b border-white/5 last:border-0">
+                                {c}
                             </li>
                         ))}
                     </ul>
