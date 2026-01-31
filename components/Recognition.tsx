@@ -18,7 +18,7 @@ export default function Recognition() {
     ];
 
     return (
-        <section className="bg-[#121212] text-white py-24 px-6 md:px-12 border-t border-white/10">
+        <section className="bg-[#121212] text-white py-24 px-6 md:px-12 border-t border-white/10" aria-label="Recognition and Experience">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
 
                 <div className="flex-1">

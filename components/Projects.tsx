@@ -37,7 +37,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className="min-h-screen bg-[#121212] text-white py-24 md:py-40 px-6 md:px-12">
+        <section className="min-h-screen bg-[#121212] text-white py-24 md:py-40 px-6 md:px-12" aria-label="Projects">
             <div className="max-w-7xl mx-auto">
                 <h3 className="text-sm md:text-base text-gray-500 uppercase tracking-widest mb-20">Projects</h3>
 

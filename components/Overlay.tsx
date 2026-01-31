@@ -33,7 +33,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                 className="absolute text-center px-4 w-full"
             >
                 <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mix-blend-difference">
-                    Faiz.
+                    Faiz Jamal
                 </h1>
                 <p className="mt-4 text-lg md:text-xl tracking-widest text-gray-400 uppercase">
                     AI Engineer & Full-Stack Developer
