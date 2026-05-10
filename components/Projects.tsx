@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 export default function Projects() {
     const projects = [
         {
-            title: "AI Document Assistant",
-            problem: "Making large documents queryable and explainable using LLMs.",
-            focus: "LangChain · LangGraph · RAG · Agent Routing",
+            title: "ClipForge",
+            problem: "Automating viral short-form clip generation from long-form content using AI.",
+            focus: "LangGraph · Groq LLMs · FastAPI · Full-Stack SaaS",
             details: [
-                "Designed a LangGraph-based reasoning workflow to dynamically route user queries based on intent.",
-                "Integrated vector-based semantic search for efficient context retrieval.",
-                "Improved response relevance by selecting task-specific reasoning paths during inference."
+                "Engineered a multi-node LangGraph pipeline to analyze transcripts, identify viral moments, and generate editing blueprints.",
+                "Integrated Supadata API with fallback proxy strategies for resilient YouTube transcript fetching.",
+                "Deployed a production-grade FastAPI backend on Render with rate limiting, input sanitization, and waitlist registration."
             ]
         },
         {
