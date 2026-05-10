@@ -8,6 +8,7 @@ export default function Projects() {
             title: "ClipForge",
             problem: "Automating viral short-form clip generation from long-form content using AI.",
             focus: "LangGraph · Groq LLMs · FastAPI · Full-Stack SaaS",
+            link: "https://clipforge-eosin.vercel.app/",
             details: [
                 "Engineered a multi-node LangGraph pipeline to analyze transcripts, identify viral moments, and generate editing blueprints.",
                 "Integrated Supadata API with fallback proxy strategies for resilient YouTube transcript fetching.",
@@ -18,6 +19,7 @@ export default function Projects() {
             title: "Wanderlust",
             problem: "Building a production-style full-stack platform.",
             focus: "Backend Architecture · Auth · MVC · MongoDB",
+            link: "https://wanderlust-eight-opal.vercel.app/",
             details: [
                 "Implemented secure authentication workflows and complex MongoDB schemas.",
                 "Designed scaleable MVC architecture with modular routing and session management.",
@@ -28,6 +30,7 @@ export default function Projects() {
             title: "PreMediq",
             problem: "Predicting health insurance costs using ML.",
             focus: "ML Pipelines · XGBoost · Streamlit",
+            link: "https://premediq01.streamlit.app/",
             details: [
                 "Built separate ML models to predict premiums based on demographic data.",
                 "Optimized XGBoost hyperparameters for high accuracy prediction.",
@@ -76,6 +79,18 @@ export default function Projects() {
                                             </li>
                                         ))}
                                     </ul>
+
+                                    {p.link && (
+                                        <a
+                                            href={p.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 mt-8 text-sm font-mono text-cyan-500 hover:text-cyan-400 transition-colors group/link"
+                                        >
+                                            View Live
+                                            <span className="inline-block transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">↗</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
