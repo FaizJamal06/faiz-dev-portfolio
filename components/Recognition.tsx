@@ -1,14 +1,18 @@
 export default function Recognition() {
     const awards = [
-        "OpenAI Academy × NxtWave Buildathon (Prefinalist)",
+        "Amex Codestreet Hackathon 2026: DisputeIQ, agentic chargeback resolution",
         "Mumbai Hacks 2025 (Finalist)",
+        "OpenAI Academy × NxtWave Buildathon (Prefinalist)",
         "ETMIS 2025: Brain Waves & Emotion Research Paper",
-        "SREC Coin Design Challenge (2nd Place)"
+        "SREC Coin Design Challenge 6.0 (2nd Place)",
+        "SREC AI Vishwaguru (3rd Place)",
+        "Open Source Contributor, Open Source Connect 2026"
     ];
 
     const certifications = [
         "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
-        "AWS Cloud Practitioner Essentials (Dec 2025)"
+        "AWS Cloud Practitioner Essentials (Dec 2025)",
+        "JPMorgan Chase & Co. Software Engineering Job Simulation (Forage)"
     ];
 
     const roles = [

@@ -36,7 +36,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                     Faiz Jamal
                 </h1>
                 <p className="mt-4 text-lg md:text-xl tracking-widest text-gray-400 uppercase">
-                    AI Engineer & Full-Stack Developer
+                    Forward Deployed Engineer · AI & Full-Stack
                 </p>
             </motion.div>
 

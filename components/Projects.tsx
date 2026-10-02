@@ -3,16 +3,49 @@
 import { motion } from "framer-motion";
 
 export default function Projects() {
-    const projects = [
+    const projects: { title: string; problem: string; focus: string; link?: string; github?: string; details: string[] }[] = [
+        {
+            title: "Eko.aiV2",
+            problem: "A real-time AI voice receptionist that books dental-clinic appointments.",
+            focus: "React · Vite · Vapi.ai · Google Calendar API",
+            github: "https://github.com/FaizJamal06/Eko.aiV2",
+            details: [
+                "Built a full-stack voice booking assistant with the Vapi Web SDK and 2 Google Calendar tools for availability checks and event creation.",
+                "Enforced deterministic business rules: 30-minute slots, 09:00 to 18:00 IST, next-slot fallback on failure, and name/email confirmation before booking.",
+                "Shipped a live transcription and call-state interface."
+            ]
+        },
         {
             title: "ClipForge",
-            problem: "Automating viral short-form clip generation from long-form content using AI.",
-            focus: "LangGraph · Groq LLMs · FastAPI · Full-Stack SaaS",
+            problem: "An agentic video automation platform that turns long-form content into short-form videos.",
+            focus: "Python · FastAPI · LangGraph · PostgreSQL · Redis",
             link: "https://clipforge-eosin.vercel.app/",
+            github: "https://github.com/FaizJamal06/clipforge",
             details: [
-                "Engineered a multi-node LangGraph pipeline to analyze transcripts, identify viral moments, and generate editing blueprints.",
-                "Integrated Supadata API with fallback proxy strategies for resilient YouTube transcript fetching.",
-                "Deployed a production-grade FastAPI backend on Render with rate limiting, input sanitization, and waitlist registration."
+                "Designed a multi-node LangGraph architecture: transcript analysis, viral-moment detection, editing blueprints, validation, and execution.",
+                "Built async FastAPI services with WebSocket monitoring, PostgreSQL persistence, and Redis state coordination.",
+                "Added failure fallbacks, rate limiting, and input sanitization."
+            ]
+        },
+        {
+            title: "Project ASTRA",
+            problem: "An agentic AI investigation platform for the Karnataka State Police Datathon.",
+            focus: "Node.js · Zoho Catalyst · QuickML · React · D3.js",
+            github: "https://github.com/Chris-debuggs/Datathon-KSP",
+            details: [
+                "Built a 5-stage Kannada voice pipeline (STT, translation, LLM/RAG, translation, TTS) on QuickML using GLM 4.7 and Qwen 3.6.",
+                "Built a multi-agent Planner running Search, RAG, and Summary agents concurrently to fit a 30-second serverless limit on Zoho Catalyst, plus a RAG backend with a semantic query rewriter.",
+                "Delivered explainable answers with clickable source citations, D3.js visualizations, and jsPDF reports."
+            ]
+        },
+        {
+            title: "SpotifyCares",
+            problem: "An AI customer support agent with a measured evaluation loop.",
+            focus: "Python · RAG · LLM Classification · LLM-as-Judge Evals",
+            github: "https://github.com/FaizJamal06/Spotify-customer-support-bot-hiver",
+            details: [
+                "Built intent classification, retrieval, and grounded responses with a k-ablation study.",
+                "Built an LLM-as-judge eval calibrated against human labels, plus a failure analysis of where the agent breaks."
             ]
         },
         {
@@ -80,17 +113,20 @@ export default function Projects() {
                                         ))}
                                     </ul>
 
-                                    {p.link && (
-                                        <a
-                                            href={p.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 mt-8 text-sm font-mono text-cyan-500 hover:text-cyan-400 transition-colors group/link"
-                                        >
-                                            View Live
-                                            <span className="inline-block transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">↗</span>
-                                        </a>
-                                    )}
+                                    <div className="flex gap-8">
+                                        {[[p.link, "View Live"], [p.github, "GitHub"]].map(([href, label]) => href && (
+                                            <a
+                                                key={label}
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 mt-8 text-sm font-mono text-cyan-500 hover:text-cyan-400 transition-colors group/link"
+                                            >
+                                                {label}
+                                                <span className="inline-block transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-0.5">↗</span>
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

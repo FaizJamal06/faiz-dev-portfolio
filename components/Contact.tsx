@@ -25,7 +25,7 @@ export default function Contact() {
                     </a>
 
                     <div className="flex gap-8 text-sm font-mono text-gray-500 mt-4">
-                        <a href="https://linkedin.com/in/faiz-jamal" className="hover:text-white transition-colors">LINKEDIN</a>
+                        <a href="https://www.linkedin.com/in/faizjamal06" className="hover:text-white transition-colors">LINKEDIN</a>
                         <a href="https://github.com/FaizJamal06" className="hover:text-white transition-colors">GITHUB</a>
                         <span>+91 63803 33437</span>
                     </div>
